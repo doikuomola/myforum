@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ board.name }}
+{% endblock title %}
+{% block content %}
+<div class="row">
+    <div class="col-10">
+        <h6>{{ board.name }}</h6>
+    </div>
+    <div class="col-2">
+        <a href="{% url 'boards:new_topic' board.pk %}">New topic</a>
+    </div>
+    
+</div>
+{% for topic in board.topics.all %}
+
+<div class="row">
+    <div class="col">
+        >><a href="">{{ topic.subject }}</a>
+        <small class="fst-italic "> started by
+            {{ topic.starter.username }}
+
+            {{ topic.last_updated }}
+        </small><<
+    </div>
+
+
+</div>
+{% endfor %}
+
+{% endblock content %}
