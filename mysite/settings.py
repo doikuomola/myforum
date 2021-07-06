@@ -20,7 +20,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -30,6 +29,8 @@ INSTALLED_APPS = [
     'boards',
     'accounts',
     'crispy_forms',
+    'django.contrib.admin',
+
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -123,3 +124,7 @@ MEDIA_ROOT = os.path.join(VENV_PATH, 'media_root')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
