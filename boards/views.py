@@ -6,8 +6,8 @@ from .forms import NewTopicForm
 
 def home(request):
     boards = Board.objects.all()
-
-    return render(request, "boards/home.html", {'boards':boards})
+    topics = Topic.objects.filter(hot=True)
+    return render(request, "boards/home.html", {'boards':boards,'topics':topics})
 
 def board_topics(request, pk):
     board = Board.objects.get(pk=pk)

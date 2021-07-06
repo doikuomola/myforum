@@ -14,6 +14,10 @@ class Topic(models.Model):
     last_updated = models.DateTimeField(auto_now_add=True)
     board = models.ForeignKey(Board, related_name='topics', on_delete=models.CASCADE)
     starter = models.ForeignKey(User, related_name='topics', on_delete=models.CASCADE)
+    hot = models.BooleanField(blank=True, null=True, default=False)
+
+    def __str__(self):
+        return f"{self.subject}"
 
 class Post(models.Model):
     message = models.TextField(max_length=4000)

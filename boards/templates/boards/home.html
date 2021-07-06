@@ -13,4 +13,17 @@ Home
     </h6>
     {% endfor %}
 </div>
+<div class="row">
+<h1>Hot topics!</h1>
+</div>
+{% for hot in topics %}
+
+<div class="row justify-content-center">
+        <p>
+            <a href="">{{ hot }}</a>
+        </p>
+    
+</div>
+{% endfor %}
+
 {% endblock content %}
