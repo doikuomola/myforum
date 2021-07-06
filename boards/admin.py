@@ -18,3 +18,10 @@ class TopicAdmin(admin.ModelAdmin):
     list_filter = ('board', 'starter', 'subject')
     date_hierarchy = 'last_updated'
     ordering = ('-last_updated',)
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    '''Admin View for Post'''
+
+    list_display = ('topic', 'message', 'created_by', 'created_at')
+    ordering = ('created_at',)

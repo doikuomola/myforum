@@ -17,7 +17,7 @@
 
 <div class="row">
     <div class="col">
-        >><a href="">{{ topic.subject }}</a>
+        >><a href="{% url 'boards:topic_posts' board.pk topic.pk %}">{{ topic.subject }}</a>
         <small class="fst-italic "> started by
             {{ topic.starter.username }}
 
