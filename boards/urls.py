@@ -8,5 +8,5 @@ urlpatterns = [
     path('boards/<int:pk>/', views.board_topics, name='board_topics'),
     path('boards/<int:pk>/new_topic', views.new_topic, name='new_topic'),
     path('boards/<int:pk>/topics/<topic_pk>/', views.topic_posts, name='topic_posts'),
-    path('boards/<int:pk>/topics/<topic_pk>//reply/', views.reply_topic, name='reply_topic'),
+    path('boards/<int:pk>/topics/<topic_pk>/reply/', views.reply_topic, name='reply_topic'),
 ]

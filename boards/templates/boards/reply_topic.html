@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% load static %}
 
-{% block title %
-}Post a reply
+{% block title %}
+Post a reply
 {% endblock %}
 
 
@@ -11,8 +12,8 @@
 
 <form method="post" class="mb-4">
     {% csrf_token %}
-    {% include 'includes/form.html' %}
-    <button type="submit" class="btn btn-success">Post a reply</button>
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success mt-3">Post a reply</button>
 </form>
 
 {% for post in topic.posts.all %}
