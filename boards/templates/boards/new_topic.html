@@ -1,13 +1,24 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}
 Start a New Topic
 {% endblock %}
 
 {% block content %}
-  <form method="post">
+<style>
+    span.asteriskField {
+        display: none;
+    }
+</style>
+<div class="row">
+    <div class="col-10">
+        <h6>{{ board.name }}</h6>
+    </div>
+</div>
+<form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form|crispy }}
     <button type="submit" class="btn btn-success mt-3">Post</button>
-  </form>
+</form>
 {% endblock %}
